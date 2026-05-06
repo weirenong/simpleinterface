@@ -14,8 +14,6 @@ The goal is simple:
 
 > Make small local models more useful by giving them structure, tools, and context.
 
-![SimpleInterface screenshot](screenshot.png)
-
 ---
 
 ## What SimpleInterface Can Do
