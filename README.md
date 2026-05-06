@@ -2,9 +2,7 @@ This project has been succeeded by SimpleInterfacetui and is not longer in devel
 
 # SimpleInterface — Lightweight Local AI Agent Chat Interface
 
-<p align="center">
-  <img src="SimpleInterface_logo.png" alt="SimpleInterface screenshot" width="300">
-</p>
+![SimpleInterface screenshot](screenshot.png)
 
 SimpleInterface is a local-first desktop AI agent built for Apple Silicon.
 
