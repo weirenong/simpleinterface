@@ -1,12 +1,12 @@
-This project has been succeeded by simpleagenttui and is not longer in development: https://github.com/weirenong/simpleagenttui
+This project has been succeeded by SimpleInterfacetui and is not longer in development: https://github.com/weirenong/SimpleInterfacetui
 
-# SimpleAgent — Lightweight Local AI Agent
+# SimpleInterface — Lightweight Local AI Agent Chat Interface
 
 <p align="center">
-  <img src="simpleagent_logo.png" alt="SimpleAgent screenshot" width="300">
+  <img src="SimpleInterface_logo.png" alt="SimpleInterface screenshot" width="300">
 </p>
 
-SimpleAgent is a local-first desktop AI agent built for Apple Silicon.
+SimpleInterface is a local-first desktop AI agent built for Apple Silicon.
 
 It runs small local models with MLX and gives them a practical agent system around them: memory, chat directives, compressed per-chat workspaces, skill routing, an agent loop, persistent knowledge retrieval, file attachments, web search, URL scraping, vision analysis, text-file reading, PDF reading, code-file reading, and a simple GUI.
 
@@ -14,13 +14,13 @@ The goal is simple:
 
 > Make small local models more useful by giving them structure, tools, and context.
 
-![SimpleAgent screenshot](screenshot.png)
+![SimpleInterface screenshot](screenshot.png)
 
 ---
 
-## What SimpleAgent Can Do
+## What SimpleInterface Can Do
 
-SimpleAgent is more than a local chatbot.
+SimpleInterface is more than a local chatbot.
 
 It can:
 
@@ -62,7 +62,7 @@ They may:
 - hallucinate when they lack information
 - struggle with messy tool results
 
-SimpleAgent avoids relying on fragile complex tool calling.
+SimpleInterface avoids relying on fragile complex tool calling.
 
 Instead, it uses a controlled skill-routing system, simple IDs, deterministic rules, memory summaries, and clear debugging output.
 
@@ -74,7 +74,7 @@ This makes a small model behave more like a practical assistant without needing 
 
 ### Local Chat
 
-SimpleAgent runs a local Qwen model through MLX.
+SimpleInterface runs a local Qwen model through MLX.
 
 The current main model is a Qwen3 thinking model, which gives better reasoning than a normal instruction model.
 
@@ -137,7 +137,7 @@ Directive rules:
 
 ### Lightweight Agent Loop
 
-SimpleAgent now uses a lightweight agent loop for higher-quality answers.
+SimpleInterface now uses a lightweight agent loop for higher-quality answers.
 
 The loop is:
 
@@ -153,7 +153,7 @@ Respond
 
 In practice, this means:
 
-| Step | What SimpleAgent does |
+| Step | What SimpleInterface does |
 |---|---|
 | Think | Understands the user's intent and what evidence is needed |
 | Act | Runs selected skills such as web search, URL scraping, memory search, knowledge retrieval, attachment reading, vision, PDF reading, or code reading |
@@ -166,7 +166,7 @@ The observation step is only used when it is useful, such as for tool results, r
 
 ### Skill Routing
 
-SimpleAgent uses numbered skills instead of complex JSON tool calls.
+SimpleInterface uses numbered skills instead of complex JSON tool calls.
 
 | Skill ID | Skill | What it does |
 |---:|---|---|
@@ -240,7 +240,7 @@ The search system also applies lightweight source-quality scoring. It can boost 
 
 ### URL Scraping
 
-If the user provides a URL, SimpleAgent can scrape it and use the page content as context.
+If the user provides a URL, SimpleInterface can scrape it and use the page content as context.
 
 The flow is:
 
@@ -269,7 +269,7 @@ This is useful for:
 
 ### Memory
 
-SimpleAgent stores lightweight memory after each turn.
+SimpleInterface stores lightweight memory after each turn.
 
 The user and assistant summaries are generated together in one compact memory pass to reduce hidden compute.
 
@@ -295,7 +295,7 @@ This gives the assistant continuity without storing huge full-history prompts.
 
 ### Persistent Knowledge Retrieval
 
-SimpleAgent supports persistent knowledge files for each chat.
+SimpleInterface supports persistent knowledge files for each chat.
 
 Knowledge files are different from normal attachments:
 
@@ -335,7 +335,7 @@ Select the most relevant chunks by similarity
 Add only the selected chunks to the final prompt
 ```
 
-This makes large reference files more useful because SimpleAgent does not need to inject the whole file every time.
+This makes large reference files more useful because SimpleInterface does not need to inject the whole file every time.
 
 Supported knowledge files currently include:
 
@@ -348,13 +348,13 @@ Supported knowledge files currently include:
 
 Image and video knowledge files can be saved as paths, but they are not automatically analysed as persistent knowledge yet.
 
-If embedding retrieval is unavailable, SimpleAgent falls back to capped file previews so the feature still works.
+If embedding retrieval is unavailable, SimpleInterface falls back to capped file previews so the feature still works.
 
 ---
 
 ### Attachments
 
-SimpleAgent supports attachments through:
+SimpleInterface supports attachments through:
 
 - drag and drop
 - file picker
@@ -534,7 +534,7 @@ This is useful for:
 - comparing multiple files
 - generating patch-style edits
 
-For multi-turn coding, SimpleAgent also includes recent code-related conversation context. This helps with follow-up prompts like:
+For multi-turn coding, SimpleInterface also includes recent code-related conversation context. This helps with follow-up prompts like:
 
 ```text
 try again
@@ -585,7 +585,7 @@ This helps prevent pasted images from piling up over time.
 
 ### Console Output Window
 
-SimpleAgent has a GUI console window.
+SimpleInterface has a GUI console window.
 
 It shows useful debugging information such as:
 
@@ -635,9 +635,9 @@ The app also shows response time after each reply, for example:
 
 ### File Editing
 
-SimpleAgent can propose edits to text/code files using an apply-patch style diff block.
+SimpleInterface can propose edits to text/code files using an apply-patch style diff block.
 
-When file edits are detected, SimpleAgent shows a review popup with the proposed patch. You can apply or cancel the changes. If `Auto apply edits` is enabled below the Send button, SimpleAgent applies detected edits immediately without showing the popup.
+When file edits are detected, SimpleInterface shows a review popup with the proposed patch. You can apply or cancel the changes. If `Auto apply edits` is enabled below the Send button, SimpleInterface applies detected edits immediately without showing the popup.
 
 File editing is limited to text-like and code-like files. New files are created inside the current chat workspace folder unless the user is editing an attached editable file.
 
@@ -737,7 +737,7 @@ pip install pypdf
 
 ```bash
 git clone <your-repo-url>
-cd simpleagent
+cd SimpleInterface
 ```
 
 ### 2. Create a virtual environment
@@ -785,7 +785,7 @@ models/<model_key>/model/
 
 ## Local Folders
 
-SimpleAgent stores local data in these folders:
+SimpleInterface stores local data in these folders:
 
 | Folder | Purpose |
 |---|---|
@@ -818,7 +818,7 @@ User sends message
 ↓
 Save user message and attachments
 ↓
-Prepare SimpleAgent identity context
+Prepare SimpleInterface identity context
 ↓
 Prepare date/time context
 ↓
@@ -855,7 +855,7 @@ This structure lets a small model behave more like an agent.
 
 ## Design Philosophy
 
-SimpleAgent follows a few simple principles:
+SimpleInterface follows a few simple principles:
 
 ### 1. Local first
 
@@ -863,7 +863,7 @@ The app is designed to run locally on a Mac.
 
 ### 2. Small model, better system
 
-Instead of relying only on a huge model, SimpleAgent gives a small model better context and tools.
+Instead of relying only on a huge model, SimpleInterface gives a small model better context and tools.
 
 ### 3. Use deterministic logic where possible
 
@@ -891,7 +891,7 @@ The project is intentionally simple enough to modify and extend.
 
 ## Current Limitations
 
-SimpleAgent is still experimental.
+SimpleInterface is still experimental.
 
 Known limitations:
 
