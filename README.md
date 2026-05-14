@@ -1,4 +1,4 @@
-This project has been succeeded by SimpleAgent and is not longer in development: https://github.com/weirenong/SimpleAgenttui
+This project has been succeeded by SimpleAgent and is not longer in development: https://github.com/weirenong/SimpleAgent
 
 # SimpleInterface — Lightweight Local AI Agent Chat Interface
 
